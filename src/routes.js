@@ -1,5 +1,7 @@
+import Footer from 'componentes/Footer'
 import Menu from 'componentes/Menu'
 import PaginaPadrao from 'componentes/PaginaPadrao'
+import NotFound from 'pages/NotFound'
 import Sobre from 'pages/Sobre'
 import Cardapio from 'pages/cardapio'
 import Inicio from 'pages/inicio'
@@ -8,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 export default function AppRouter() {
 	return (
-		<main>
+		<main className='container'>
 			<Router>
 				< Menu />
 				<Routes>
@@ -16,8 +18,10 @@ export default function AppRouter() {
 						<Route index element={<Inicio />} />
 						<Route path='cardapio' element={<Cardapio />} />
 						<Route path='sobre' element={<Sobre />} />
+						<Route path='*' element={<NotFound />} />
 					</Route>
 				</Routes>
+				<Footer />
 			</Router>
 		</main>
 	)
