@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Buscador from './Buscador';
 import styles from './Cardapio.module.scss';
 import stylesTema from 'styles/Tema.module.scss'
 import Filtros from './Filtros';
 import Ordenador from './Ordenador';
 import Itens from './Itens';
-export default function Cardapio() {
+function Cardapio() {
 
 	const [busca, setBusca] = useState('');
 	const [filtro, setFiltro] = useState<number | null>(null);
@@ -28,3 +28,5 @@ export default function Cardapio() {
 
 	);
 }
+
+export default memo(Cardapio)
